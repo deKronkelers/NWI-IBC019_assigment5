@@ -1,5 +1,7 @@
 \documentclass[12pt]{article}
 
+\usepackage{enumerate}
+
 \title{Assignment 5}
 
 \author{Hendrik Werner s4549775}
@@ -9,6 +11,18 @@
 
 \section*{7.7}
 \section*{7.10}
+\begin{enumerate}[a]
+	\item %a
+	Yes, the sequence could be used to implement a buddy allocation system. You would start at fibonacci number $F_2 = 1$ and then split according to the numbers.
+
+	You would first split the block in $F_3 = 2$ parts if the whole memory is to big, then procedd splitting this block it into $F_4 = 3$ parts and so on.
+
+	If the current block at splitting level $n$ is too big, split it into $F_{n + 1}$ parts and try again.
+
+	\item %b
+	With this method you'd get more granularity for the size of memory blocks, potentially wasting less space.
+\end{enumerate}
+
 \section*{7.14}
 
 \end{document}
