@@ -19,6 +19,9 @@
 			512K\\
 			\hline
 		\end{tabular}
+
+		Total internal fragmentation: $0$
+
 		\item Allocating A (100K)
 
 		\begin{tabular}{|p{\linewidth / 4}|p{\linewidth / 4}|p{\linewidth / 2}|}
@@ -26,6 +29,9 @@
 			A (100K / 128K) & 128K & 256K\\
 			\hline
 		\end{tabular}
+
+		Total internal fragmentation: $28K$
+
 		\item Allocating B (40K)
 
 		\begin{tabular}{|p{\linewidth / 4}|p{\linewidth / 8}|p{\linewidth / 8}|p{\linewidth / 2}|}
@@ -33,6 +39,9 @@
 			A (100/128K) & B (40/64K) & 64K & 256K\\
 			\hline
 		\end{tabular}
+
+		Total internal fragmentation: $28K + 24K = 52K$
+
 		\item Allocating C (190K)
 
 		\begin{tabular}{|p{\linewidth / 4}|p{\linewidth / 8}|p{\linewidth / 8}|p{\linewidth / 2}|}
@@ -40,6 +49,9 @@
 			A (100/128K) & B (40/64K) & 64K & C (190/256K)\\
 			\hline
 		\end{tabular}
+
+		Total internal fragmentation: $28K + 24K + 66K = 118K$
+
 		\item Freeing A
 
 		\begin{tabular}{|p{\linewidth / 4}|p{\linewidth / 8}|p{\linewidth / 8}|p{\linewidth / 2}|}
@@ -47,6 +59,9 @@
 			128K & B (40/64K) & 64K & C (190/256K)\\
 			\hline
 		\end{tabular}
+
+		Total internal fragmentation: $24K + 66K = 90K$
+
 		\item Allocating D (60K)
 
 		\begin{tabular}{|p{\linewidth / 4}|p{\linewidth / 8}|p{\linewidth / 8}|p{\linewidth / 2}|}
@@ -54,6 +69,9 @@
 			128K & B (40/64K) & D (60/64K) & C (190/256K)\\
 			\hline
 		\end{tabular}
+
+		Total internal fragmentation: $24K + 4K + 66K = 94K$
+
 		\item Freeing B
 
 		\begin{tabular}{|p{\linewidth / 4}|p{\linewidth / 8}|p{\linewidth / 8}|p{\linewidth / 2}|}
@@ -61,6 +79,9 @@
 			128K & 64K & D (60/64K) & C (190/256K)\\
 			\hline
 		\end{tabular}
+
+		Total internal fragmentation: $4K + 66K = 70K$
+
 		\item Freeing D
 
 		\begin{tabular}{|p{\linewidth / 2}|p{\linewidth / 2}|}
@@ -68,6 +89,9 @@
 			256K & C (190/256K)\\
 			\hline
 		\end{tabular}
+
+		Total internal fragmentation: $66K$
+
 		\item Freeing D
 
 		\begin{tabular}{|p{\linewidth}|}
@@ -75,6 +99,9 @@
 			512K\\
 			\hline
 		\end{tabular}
+
+		Total internal fragmentation: $0$
+
 	\end{itemize}
 
 \section*{7.10}
