@@ -1,6 +1,7 @@
 \documentclass[12pt]{article}
 
 \usepackage{enumerate}
+\usepackage{calc}
 
 \title{Assignment 5}
 
@@ -10,6 +11,72 @@
 \maketitle
 
 \section*{7.7}
+	\begin{itemize}
+		\item Initial state
+
+		\begin{tabular}{|p{\linewidth}|}
+			\hline
+			512K\\
+			\hline
+		\end{tabular}
+		\item Allocating A (100K)
+
+		\begin{tabular}{|p{\linewidth / 4}|p{\linewidth / 4}|p{\linewidth / 2}|}
+			\hline
+			A (100K / 128K) & 128K & 256K\\
+			\hline
+		\end{tabular}
+		\item Allocating B (40K)
+
+		\begin{tabular}{|p{\linewidth / 4}|p{\linewidth / 8}|p{\linewidth / 8}|p{\linewidth / 2}|}
+			\hline
+			A (100/128K) & B (40/64K) & 64K & 256K\\
+			\hline
+		\end{tabular}
+		\item Allocating C (190K)
+
+		\begin{tabular}{|p{\linewidth / 4}|p{\linewidth / 8}|p{\linewidth / 8}|p{\linewidth / 2}|}
+			\hline
+			A (100/128K) & B (40/64K) & 64K & C (190/256K)\\
+			\hline
+		\end{tabular}
+		\item Freeing A
+
+		\begin{tabular}{|p{\linewidth / 4}|p{\linewidth / 8}|p{\linewidth / 8}|p{\linewidth / 2}|}
+			\hline
+			128K & B (40/64K) & 64K & C (190/256K)\\
+			\hline
+		\end{tabular}
+		\item Allocating D (60K)
+
+		\begin{tabular}{|p{\linewidth / 4}|p{\linewidth / 8}|p{\linewidth / 8}|p{\linewidth / 2}|}
+			\hline
+			128K & B (40/64K) & D (60/64K) & C (190/256K)\\
+			\hline
+		\end{tabular}
+		\item Freeing B
+
+		\begin{tabular}{|p{\linewidth / 4}|p{\linewidth / 8}|p{\linewidth / 8}|p{\linewidth / 2}|}
+			\hline
+			128K & 64K & D (60/64K) & C (190/256K)\\
+			\hline
+		\end{tabular}
+		\item Freeing D
+
+		\begin{tabular}{|p{\linewidth / 2}|p{\linewidth / 2}|}
+			\hline
+			256K & C (190/256K)\\
+			\hline
+		\end{tabular}
+		\item Freeing D
+
+		\begin{tabular}{|p{\linewidth}|}
+			\hline
+			512K\\
+			\hline
+		\end{tabular}
+	\end{itemize}
+
 \section*{7.10}
 \begin{enumerate}[a]
 	\item %a
